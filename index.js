@@ -361,10 +361,17 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+// Placement of the empty array; Where to place?
+function artistByCountry(arr, str){
+  const artistsName = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].nationality === str) {
+      artistsName.push(arr[i].name)
+    }
+  }
+  return artistsName;
 }
-
+console.log(artistByCountry(artists, 'Spanish'))
 
 
 /* ***** END OF TASKS ***** */
