@@ -270,7 +270,8 @@ Use removeArtist to do the following:
 
 function removeArtist(arr, num) {
   const copyArtists = [...arr];
-  delete copyArtists[num].name;
+  // delete copyArtists[num].name;
+  copyArtists.splice(num,1);
   // delete copyArtists[num];
   return copyArtists;
 }
@@ -293,9 +294,9 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(arr, name, year, genre, nationality, bio) {
+function addArtist(arr, name, years, genre, nationality, bio) {
   const copyArtists = [...arr];
-  copyArtists.push({name, year, genre, nationality, bio});
+  copyArtists.push({name, years, genre, nationality, bio});
   return copyArtists;
 }
 console.log(addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.'));
@@ -332,23 +333,23 @@ Use artistInfo to do the following:
 
 // Why includes method is throwing an error?
 
-function artistInfo(arr, str){
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name === str) {
-      return arr[i].bio;
-    }
-  }
-}
-console.log(artistInfo(artists, 'Frida Kahlo'))
-
 // function artistInfo(arr, str){
 //   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i].name.includes(str)) {
+//     if (arr[i].name === str) {
 //       return arr[i].bio;
 //     }
 //   }
 // }
 // console.log(artistInfo(artists, 'Frida Kahlo'))
+
+function artistInfo(arr, str){
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name.includes(str)) {
+      return arr[i].bio;
+    }
+  }
+}
+console.log(artistInfo(artists, 'Frida Kahlo'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
